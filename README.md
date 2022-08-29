@@ -43,9 +43,5 @@ Le logo et ses variantes ont intégralement été créé par MSX-R.
 
 # Obtention des données (API)
 
-<<<<<<< HEAD
-The Movie DataBase : https://www.themoviedb.org/
-=======
-The Movie DataBase : https://www.themoviedb.org/
 
-> > > > > > > c0cf4103c26455466c4ce8a26bd449f6cf384a2d
+The Movie DataBase : https://www.themoviedb.org/
