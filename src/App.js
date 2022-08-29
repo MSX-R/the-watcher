@@ -1,4 +1,5 @@
 import "./App.css";
+import "./animationsCSS/animations.css"
 import { Routes, Route } from "react-router-dom";
 import EntrancePage from "./screens/EntrancePage/EntrancePage";
 import Home from "./screens/Home/Home";
