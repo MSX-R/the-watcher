@@ -1,0 +1,11 @@
+Vous avez besoin de :
+Récupérer la liste des films depuis une API existante :
+https://api.themoviedb.org/3
+
+
+Puis dans un environnement ReactJS, il faudra faire une page qui contient :
+
+ - Les 10 derniers films les plus populaires avec leur image, catégorie, nom, description tronquée à 120 caractères.
+ - Récupérer les 30 autres films les plus populaires, en les intégrant dans un slider et afficher : image / nom / catégorie.
+ - L'interface doit être mobile first et responsive.
+ - Le code source produit doit être évolutif et respecter l'état de l'art.
