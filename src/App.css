@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue");
+
+:root {
+  /* COLORS */
+  --Color1: rgb(6, 6, 6);
+  --Color2: whitesmoke;
+  --Color3: rgb(154, 0, 0);
+  --Color4: rgb(56, 56, 56);
+  --Color5: rgb(238, 95, 95);
+  /* FONT NET FLIX */
+  --font-net: "Bebas Neue", cursive;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,4 +23,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--Color1);
+  color: var(--Color2);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  width: auto;
+  height: 25px;
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  color: rgba(255, 255, 255, 0.847);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-net);
+  letter-spacing: 2px;
+}
+
+h2 {
+  padding-left: 20px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
 }
