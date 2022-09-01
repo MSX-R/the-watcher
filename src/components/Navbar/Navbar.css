@@ -67,3 +67,26 @@
 .menuMobileFerme {
   display: none;
 }
+
+/* PAD  */
+@media (min-width: 768px) {
+  .burgermenu {
+    font-size: 70px;
+  }
+
+  .navlogo {
+    width: 70px;
+  }
+}
+/* PC1 */
+
+@media (min-width: 992px) {
+  .definition {
+  }
+}
+/* PC2 */
+
+@media (min-width: 1200px) {
+  .definition {
+  }
+}

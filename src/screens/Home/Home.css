@@ -1,4 +1,4 @@
-.posterTop10 {
+.posterTop1040 {
   width: 200px;
   height: auto;
 }
@@ -11,5 +11,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
+
+.researchClass {
+  background: var(--Color3);
+}
+
+/* PAD  */
+@media (min-width: 768px) {
+  .top10Component{
+    height: 100vh;
+  }
+}
+/* PC1 */
+
+@media (min-width: 992px) {
+  .definition {
+  }
+}
+/* PC2 */
+
+@media ( min-width : 1200px ) {
+  .definition{}
+  }

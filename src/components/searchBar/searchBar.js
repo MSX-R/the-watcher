@@ -13,6 +13,8 @@ const SearchBar = ({
   setSearchResult,
   movieDetails,
   setMovieDetails,
+  dataType,
+  setDataType
 }) => {
   const [movieId, setMovieId] = useState("");
   const [viewSearchBar, setViewSearchBar] = useState(false);
@@ -41,7 +43,7 @@ const SearchBar = ({
 
   useEffect(() => {
     if (movieId.length > 0) {
-      const fetchUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
+      const fetchUrl = `https://api.themoviedb.org/3/${dataType}/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
       
       async function fetchData() {
         const request = await axios.get(fetchUrl);

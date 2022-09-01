@@ -20,22 +20,35 @@
   width: fit-content;
 }
 
-.top10MovieTitle {
-  width: 60%;
+.top10RankingTitle {
+  display: flex;
+  flex-direction: row;
+}
+.top10Ranking {
+  width: fit-content;
   height: fit-content;
-  font-size: 22px;
+  font-size: 18px;
   padding-left: 20px;
+  /* border: 2px solid orange; */
+  margin: 10px 0;
+}
+
+.top10Title {
+  width: fit-content;
+  height: fit-content;
+  font-size: 18px;
+  padding-left: 5px;
+  /* border: 2px solid orange; */
+  margin: 10px 0;
 }
 
 .top10Genres {
   font-size: 10px;
   padding-left: 20px;
+  margin: 5px 0;
 }
 
 .top10MovieCategory {
-  /* position: absolute;
-    right: 0;
-    bottom: 20%; */
   padding: 0 20px 0 20px;
   margin-bottom: 0;
   text-align: left;
@@ -49,8 +62,13 @@
   font-size: 10px;
 }
 
-.poster {
-  margin: 0 18px 0 0;
+.posterTop10 {
+  margin-right: 18px;
+  border-radius: 8px;
+  border: 2px solid hwb(0 3% 20% / 0.666);
+  width: 100px;
+  height: 150px;
+  box-shadow: 1px 1px 2px black;
 }
 
 .genresSliderTop {
@@ -119,15 +137,38 @@
   z-index: 1;
 }
 
-.toh110MovieRanking {
-  position: absolute;
-  top: -70px;
-  right: 5px;
-  font-size: 85px;
-  text-shadow: -2px -3px 2px rgb(240, 240, 240);
 
-  transform: rotate(10deg);
-  font-weight: bold;
-  color: rgba(147, 112, 21, 0.72);
-  z-index: 2;
+
+/* PAD  */
+@media (min-width: 768px) {
+  .titleCategory{
+    font-size: 50px ;
+  }
+.top10Ranking, .top10Title {
+  font-size: 35px;
+}
+.top10Genres{
+  font-size: 16px;
+}
+.top10MovieCategory, .description{
+  font-size: 14px;
+}
+.buttons > button {
+  width: 20%;
+
+}
+
+.posterTop10{
+  height: 285px;
+  width: 200px;
+  border : 5px solid rgba(167, 165, 165, 0.948);
+}
+
+}
+/* PC1 */
+@media (min-width: 992px) {
+}
+/* PC2 */
+
+@media (min-width: 1200px) {
 }

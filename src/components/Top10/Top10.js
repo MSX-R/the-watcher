@@ -25,14 +25,33 @@ const Top10 = ({
           `https://api.themoviedb.org/3/movie/${popularMovie.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`
         )
         .then((res) => res.data)
-        .then((data) => setMoviePEGIUnique)
+        .then((data) => setMoviePEGIUnique(data))
         .catch((err) => {
           console.log(err);
         });
     };
     moviesPEGICall();
-  }, []);
+  }, [popularMovie.id]);
 
+  // PEGI Conversion FR
+  // switch(pegi) {
+  //   case 'G' :
+  //     pegi = ' Tous publics';
+  //     break;
+  //     case 'PG' :
+  //       pegi = ' Interdit aux -10 ans';
+  //       break;
+  //       case 'PG-13' :
+  //       pegi = ' Interdit aux -13 ans';
+  //       break;
+  //       case 'R' :
+  //      pegi = ' Autorisation Parentale recquise aux -17 ans';
+  //       break;
+  //       case 'NC-17' :
+  //       pegi = ' Interdit aux -17ans';
+  //       break;
+  //       default :
+  //       pegi = 'Non-classé';
   // BUTTONS
   const handleChangePreviousMovie = () => {
     if (indexMovie <= 0) {
@@ -79,9 +98,13 @@ const Top10 = ({
           <div className="top10ContainerTopOverview">
             <div className="top10TitlePegiBloc">
               <h4 className="title titleCategory">Top 10 FILMS POPULAIRES</h4>
-              <h2 className=" title top10MovieTitle">
-                {popularMovie.title ? popularMovie.title : popularMovie.name}
-              </h2>
+              <div className="top10RankingTitle">
+                <h2 className="title top10Ranking">#{indexMovie + 1}</h2>
+
+                <h2 className=" title top10Title">
+                  {popularMovie.title ? popularMovie.title : popularMovie.name}
+                </h2>
+              </div>
               {/* <img src={{}} alt="Fond d'ecran" /> */}
               <p className=" top10Genres">
                 {popularMovie.genre_ids
@@ -97,25 +120,19 @@ const Top10 = ({
               </p>
               {moviePEGIUnique.release_dates !== undefined &&
                 moviePEGIUnique.release_dates.results.map((el) => {
-                  if (el.iso_3166_1.includes("FR")) {
+                  if (el.iso_3166_1.includes("US")) {
                     if (el.release_dates[0].certification.length) {
                       pegi = el.release_dates[0].certification;
                     }
                   }
                 })}
               <p className=" top10MovieCategory">{pegi}</p>
-              {/* PEGI A REVOIR .. N / A reste.. et ne change pas */}
             </div>
-            <div className="top10RankingPosterBloc">
-              <h1 className="toh110MovieRanking">#{indexMovie + 1}</h1>
-              <img
-                src={`${urlImage}${popularMovie.poster_path}`}
-                alt={
-                  popularMovie.title ? popularMovie.title : popularMovie.name
-                }
-                className="poster"
-              ></img>
-            </div>
+            <img
+              src={`${urlImage}${popularMovie.poster_path}`}
+              alt={popularMovie.title ? popularMovie.title : popularMovie.name}
+              className="posterTop10 "
+            ></img>
           </div>
 
           {/* <p className="descriptionSliderTop">{truncateValue(popularMovie.overview)} </p> */}

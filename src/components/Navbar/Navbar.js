@@ -14,6 +14,9 @@ const Navbar = ({
   setSearchResult,
   movieDetails,
   setMovieDetails,
+  // PROPS DATA TYPE CHANGER
+  dataType,
+  setDataType,
 }) => {
   const navigate = useNavigate();
 
@@ -37,6 +40,11 @@ const Navbar = ({
     changeBackground();
     window.addEventListener("scroll", changeBackground);
   });
+
+  const changeType = () => {
+    setDataType("tv");
+    console.log(" JE SUIS LE DATA TYPE", dataType);
+  };
 
   return (
     <div className={navbarBG ? " navbar navbarBGdark" : "navbar"}>
@@ -73,21 +81,13 @@ const Navbar = ({
           <li className="navlinks" onClick={() => navigate("/home")}>
             Accueil
           </li>
-          <li
-          //   className="navlinks" onClick={() => navigate("/films")}
-          >
+          <li className="navlinks" onClick={() => setDataType("movie")}>
             Films
           </li>
-          <li
-          //   className="navlinks" onClick={() => navigate("/series")}
-          >
+          <li className="navlinks" onClick={() => changeType()}>
             Series
           </li>
-          <li
-          //   className="navlinks" onClick={() => navigate("/favoris")}
-          >
-            Favoris
-          </li>
+          <li className="navlinks">Favoris</li>
         </div>{" "}
       </div>{" "}
     </div>

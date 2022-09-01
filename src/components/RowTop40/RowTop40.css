@@ -53,16 +53,26 @@
   text-align: center;
 }
 
+.top40Genres {
+  width: fit-content;
+  height: auto;
+  color: rgba(255, 255, 255, 0.668);
+  font-size: 8px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
 /* PAD  */
 @media (min-width: 768px) {
-  .row {
-    margin: 5vh 0 5vh 5vh !important;
-  }
-  .rowMovieTitle {
-    font-size: 16px;
-  }
+ .top40Genres {
+  font-size: 11px;
+ }
+ .rowMovieTitle {
+  font-size: 16px;
+}
 
-  
 }
 /* PC1 */
 @media (min-width: 992px) {

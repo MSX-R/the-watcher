@@ -5,6 +5,8 @@ import axios from "axios";
 import Top10 from "../../components/Top10/Top10";
 import Navbar from "../../components/Navbar/Navbar";
 import Row from "../../components/Row/Row";
+import RowTop40 from "../../components/RowTop40/RowTop40";
+
 
 const Home = ({
   urlImage,
@@ -39,6 +41,9 @@ const Home = ({
   thrillerMovie,
   guerreMovie,
   westernMovie,
+  // PROPS DATA TYPE CHANGER
+  dataType,
+  setDataType,
 }) => {
   const [popularMovie, setPopularMovie] = useState([]);
   const [popularTop2040, setPopularTop2040] = useState([]);
@@ -120,6 +125,9 @@ const Home = ({
         searchResult={searchResult}
         setSearchResult={setSearchResult}
         movieDetails={movieDetails}
+        // PROPS DATA TYPE CHANGER
+        dataType={dataType}
+        setDataType={setDataType}
       />
       {selectionTop10.length ? (
         // FILMS POPULAIRES TOP10
@@ -143,6 +151,7 @@ const Home = ({
       {/* AFFICHAGE ELEMENTS RECHERCHES SI SAISIE */}
       {searchTerm.length ? (
         <Row
+          classic="researchClass"
           title="Recherche en direct"
           moviesList={searchResult}
           urlImage={urlImage}
@@ -152,9 +161,10 @@ const Home = ({
       )}
       {/* FILMS POPULAIRE 11-40 */}
       {selectionTop40 ? (
-        <Row
+        <RowTop40
           title="FILMS POPULAIRES TOP 11 - 40"
           moviesList={selectionTop40}
+          genresFilms={genresFilms}
           urlImage={urlImage}
         />
       ) : (

@@ -35,8 +35,11 @@ function App() {
   const [thrillerMovie, setThrillerMovie] = useState([]);
   const [guerreMovie, setGuerreMovie] = useState([]);
   const [westernMovie, setWesternMovie] = useState([]);
+// DATA TYPE CHANGER
+const [dataType, setDataType] =useState(["movie"])
 
-  // MOVIES = GENRES LISTE GENERALE
+
+  // PEGI LISTE FRANCAISE
   useEffect(() => {
     const moviesPEGIcall = async () => {
       await axios
@@ -44,8 +47,7 @@ function App() {
           `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
         )
         .then((response) => response.data)
-        .then((data) =>
-          console.log(" JE SUIS DATA CERTIF 3", data.certifications.FR)
+        .then((data) => setMoviesPEGI(data.certifications.FR)
         )
         .catch((err) => {
           console.log(err);
@@ -70,8 +72,8 @@ function App() {
     genresFilmsCALL();
   }, []);
 
-  genresFilms &&
-    console.log("Affichage de la liste des Genres de film", genresFilms);
+  // genresFilms &&
+  //   console.log("Affichage de la liste des Genres de film", genresFilms);
 
   // MOVIE GENRE : ACTION
   useEffect(() => {
@@ -82,6 +84,7 @@ function App() {
         )
         .then((response) => response.data)
         .then((data) => setActionMovie(data.results))
+
         .catch((err) => {
           console.log(err);
         });
@@ -394,6 +397,9 @@ function App() {
               genresFilms={genresFilms}
               moviesPEGI={moviesPEGI}
               setMoviesPEGI={setMoviesPEGI}
+              // PROPS DATA TYPE CHANGER
+              dataType={dataType} 
+              setDataType={setDataType}
               // MOVIES GENRES PROPS
               actionMovie={actionMovie}
               // setActionMovie={setActionMovie}
