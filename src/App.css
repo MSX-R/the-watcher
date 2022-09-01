@@ -6,7 +6,7 @@
   --Color2: whitesmoke;
   --Color3: rgb(154, 0, 0);
   --Color4: rgb(56, 56, 56);
-  --Color5: rgb(238, 95, 95);
+  --Color5: rgb(190, 2, 2);
   /* FONT NET FLIX */
   --font-net: "Bebas Neue", cursive;
 }
@@ -41,7 +41,7 @@ button {
   height: 25px;
   padding: 0 10px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -57,13 +57,7 @@ h3,
 h4 {
   font-family: var(--font-net);
   letter-spacing: 2px;
-}
-
-h2 {
-  padding-left: 20px;
-}
-
-h4 {
+  /* padding-left: 20px; */
   margin: 0;
 }
 
@@ -71,9 +65,22 @@ h4 {
   cursor: pointer;
 }
 
+.title {
+  text-shadow: 3px 3px 4px black;
+}
 
+.description {
+  font-size: 11px;
+}
+
+.poster {
+  border: 2px solid rgba(192, 192, 192, 0.532);
+  border-radius: 8px;
+  width: 125px;
+  height: 175px;
+  margin: 20px;
+}
 
 .hidden {
   display: none;
 }
-

@@ -1,0 +1,49 @@
+.row {
+  margin: 7vh 0px;
+}
+
+.row h2 {
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+
+.rowPosters {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  overflow: auto hidden;
+  /* border: 3px solid blue; */
+  height: 100%;
+  padding: 30px 20px;
+  border-left: none;
+  border-right: none;
+  border-top: 6px solid whitesmoke;
+  border-bottom: 3px solid rgba(245, 245, 245, 0.265);
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  font-size: 12px;
+  text-align: center;
+  border: 2px solid silver;
+}
+
+.posterRow {
+  width: 150px;
+  height: 225px;
+  margin: 20px;
+}
+
+.rowCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowTitle {
+  padding-left: 20px;
+}

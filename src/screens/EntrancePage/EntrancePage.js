@@ -15,12 +15,16 @@ const EntrancePage = () => {
         className="logo logoEntrance HeartbeatAndFadeIn "
         onClick={() => navigate("/home")}
       />
-      <div className="backgroundRadialEffect fade-in"></div>
-      <img
+      <div
+        className="backgroundRadialEffect fade-in"
+        alt="radial effect on background"
+      ></div>
+      {/* <img
         src={BackgroundEntrance}
         alt="Movies wallpapers"
         className="backgroundEntrance fade-in"
-      />
+      /> */}
+      <div alt="Movies wallpapers" className="backgroundEntrance fade-in"></div>
     </div>
   );
 };
