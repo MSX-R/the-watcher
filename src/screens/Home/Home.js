@@ -72,7 +72,7 @@ const Home = ({
     const popularCall1 = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=23bf19828d3b1371041e35c30a6e9db1&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setPopularMovie(data.results))
@@ -88,7 +88,7 @@ const Home = ({
     const popularCall2 = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=23bf19828d3b1371041e35c30a6e9db1&language=fr-FR&page=2`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=2`
         )
         .then((response) => response.data)
         .then(
@@ -107,7 +107,10 @@ const Home = ({
   // MOVIE GENRE : POPULAR  Top 11-40
   const selectionTop40 = popularMovie && popularTop2040.slice(10, 40);
 
-
+  // console.log(
+  //   `JE SUIS LE FILm choisi par TOP10 n°0 = ${selectionTop10[0].title} ==> `,
+  //   selectionTop10[0].release_dates
+  // );
   return (
     <div>
       <Navbar

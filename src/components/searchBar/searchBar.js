@@ -22,7 +22,7 @@ const SearchBar = ({
     setSearchTerm("");
   };
 
-  const fetchUrl = `https://api.themoviedb.org/3/search/multi?api_key=b93353fcd7f62bd05b3e3ca37d9954b4&language=fr-FR&page=1&include_adult=true&query=${searchTerm}`;
+  const fetchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=1&include_adult=true&query=${searchTerm}`;
 
   useEffect(() => {
     if (searchTerm.length > 0) {
@@ -41,7 +41,7 @@ const SearchBar = ({
 
   useEffect(() => {
     if (movieId.length > 0) {
-      const fetchUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=b93353fcd7f62bd05b3e3ca37d9954b4&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
+      const fetchUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
       
       async function fetchData() {
         const request = await axios.get(fetchUrl);

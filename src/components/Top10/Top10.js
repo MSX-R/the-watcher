@@ -22,7 +22,7 @@ const Top10 = ({
     const moviesPEGICall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/${popularMovie.id}?api_key=b93353fcd7f62bd05b3e3ca37d9954b4&append_to_response=videos,images,credits,release_dates&language=fr-FR`
+          `https://api.themoviedb.org/3/movie/${popularMovie.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`
         )
         .then((res) => res.data)
         .then((data) => setMoviePEGIUnique)

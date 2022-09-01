@@ -41,10 +41,12 @@ function App() {
     const moviesPEGIcall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/certification/movie/list?api_key=23bf19828d3b1371041e35c30a6e9db1`
+          `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
         )
         .then((response) => response.data)
-        .then((data) => console.log(" JE SUIS DATA CERTIF 3",data.certifications.FR))
+        .then((data) =>
+          console.log(" JE SUIS DATA CERTIF 3", data.certifications.FR)
+        )
         .catch((err) => {
           console.log(err);
         });
@@ -57,7 +59,7 @@ function App() {
     const genresFilmsCALL = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=23bf19828d3b1371041e35c30a6e9db1&language=fr-FR`
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`
         )
         .then((response) => response.data)
         .then((data) => setGenresFilms(data.genres))
@@ -76,7 +78,7 @@ function App() {
     const actionCALL = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=28&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=28&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setActionMovie(data.results))
@@ -92,7 +94,7 @@ function App() {
     const aventureCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=12&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=12&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setAventureMovie(data.results))
@@ -108,7 +110,7 @@ function App() {
     const animationCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=16&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=16&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setAnimationMovie(data.results))
@@ -124,7 +126,7 @@ function App() {
     const comedieCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=35&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=35&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setComedieMovie(data.results))
@@ -140,7 +142,7 @@ function App() {
     const crimeCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=80&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=80&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setCrimemovie(data.results))
@@ -156,7 +158,7 @@ function App() {
     const documentaireCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=99&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=99&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setDocumentairemovie(data.results))
@@ -172,7 +174,7 @@ function App() {
     const drameCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=18&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=18&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setDrameMovie(data.results))
@@ -188,7 +190,7 @@ function App() {
     const familialCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=10751&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10751&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setFamilialMovie(data.results))
@@ -204,7 +206,7 @@ function App() {
     const fantastiqueCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=14&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=14&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setFantastiqueMovie(data.results))
@@ -220,7 +222,7 @@ function App() {
     const histoireCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=36&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=36&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setHistoireMovie(data.results))
@@ -236,7 +238,7 @@ function App() {
     const horreurCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=27&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=27&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setHorreurMovie(data.results))
@@ -252,7 +254,7 @@ function App() {
     const musiqueCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=10402&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10402&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setMusiqueMovie(data.results))
@@ -268,7 +270,7 @@ function App() {
     const mystereCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=9648&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=9648&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setMystereMovie(data.results))
@@ -284,7 +286,7 @@ function App() {
     const romanceCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=10749&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10749&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setRomanceMovie(data.results))
@@ -300,7 +302,7 @@ function App() {
     const sciencefictionCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=878&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=878&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setSciencefictionMovie(data.results))
@@ -316,7 +318,7 @@ function App() {
     const telefilmCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=10770&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10770&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setTelefilmMovie(data.results))
@@ -332,7 +334,7 @@ function App() {
     const thrillerCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=53&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=53&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setThrillerMovie(data.results))
@@ -348,7 +350,7 @@ function App() {
     const guerreCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=10752&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10752&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setGuerreMovie(data.results))
@@ -364,7 +366,7 @@ function App() {
     const westernCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=23bf19828d3b1371041e35c30a6e9db1&with_genres=37&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=37&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setWesternMovie(data.results))
@@ -390,7 +392,7 @@ function App() {
               setSearchResult={setSearchResult}
               movieDetails={movieDetails}
               genresFilms={genresFilms}
-              moviesPEGI={moviesPEGI} 
+              moviesPEGI={moviesPEGI}
               setMoviesPEGI={setMoviesPEGI}
               // MOVIES GENRES PROPS
               actionMovie={actionMovie}
