@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/the-watcher/static/css/main.ba9ce777.css",
+    "main.css": "/the-watcher/static/css/main.71121add.css",
     "main.js": "/the-watcher/static/js/main.957d8792.js",
     "static/js/787.ae622a14.chunk.js": "/the-watcher/static/js/787.ae622a14.chunk.js",
     "static/media/moviesWallpapers.jpg": "/the-watcher/static/media/moviesWallpapers.aec4fbb007104c622c19.jpg",
     "static/media/logoBlanc.png": "/the-watcher/static/media/logoBlanc.3b23f45618e47ee376c9.png",
     "index.html": "/the-watcher/index.html",
-    "main.ba9ce777.css.map": "/the-watcher/static/css/main.ba9ce777.css.map",
+    "main.71121add.css.map": "/the-watcher/static/css/main.71121add.css.map",
     "main.957d8792.js.map": "/the-watcher/static/js/main.957d8792.js.map",
     "787.ae622a14.chunk.js.map": "/the-watcher/static/js/787.ae622a14.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba9ce777.css",
+    "static/css/main.71121add.css",
     "static/js/main.957d8792.js"
   ]
 }
