@@ -48,7 +48,9 @@ Le logo et ses variantes ont intégralement été créé par MSX-R.
 <a href="https://msx-r.github.io/the-watcher/" ><img src="https://i.goopics.net/21wmrm.png" alt="Image" style="width:200px"> <img src="https://i.goopics.net/45on35.png" alt="Image" style="width:200px"> <img src="https://i.goopics.net/imff8j.png" alt="Image" style="width:205px">  
 </a>
 
-<img src="https://i.goopics.net/y4yv2e.png" alt="Image" style="width:100px">
+<img src="https://i.goopics.net/clqend.png" alt="Image" style="width:100px"> <img src="https://i.goopics.net/rghyp5.png" alt="Image" style="width:128px">  <img src="https://i.goopics.net/y4yv2e.png" alt="Image" style="width:128px"> 
+
+
 
 # Obtention des données (API)
 
