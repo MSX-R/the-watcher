@@ -1,7 +1,7 @@
 import React from "react";
 import "./RowTop40.css";
 
-const Row = ({ title, moviesList, urlImage, classic = "", genresFilms }) => {
+const RowTop40 = ({ title, moviesList, urlImage, classic = "", genresFilms }) => {
   return (
     <div className="row">
       <h2 className="title rowTitle"> {title}</h2>
@@ -35,4 +35,4 @@ const Row = ({ title, moviesList, urlImage, classic = "", genresFilms }) => {
   );
 };
 
-export default Row;
+export default RowTop40;

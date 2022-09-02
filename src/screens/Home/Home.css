@@ -15,12 +15,18 @@
 }
 
 .researchClass {
-  background: var(--Color3);
+  /* background: var(--Color3); */
+  background: linear-gradient(
+    to bottom,
+    rgba(221, 0, 0, 0.3),
+    rgba(221, 0, 0, 0.5),
+    rgba(221, 0, 0, 0.3)
+  );
 }
 
 /* PAD  */
 @media (min-width: 768px) {
-  .top10Component{
+  .top10Component {
     height: 100vh;
   }
 }
@@ -32,6 +38,7 @@
 }
 /* PC2 */
 
-@media ( min-width : 1200px ) {
-  .definition{}
+@media (min-width: 1200px) {
+  .definition {
   }
+}

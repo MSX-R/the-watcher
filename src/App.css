@@ -76,12 +76,11 @@ h4 {
 }
 
 .poster {
-  border: 2px solid rgba(192, 192, 192, 0.532);
+  border: 3px solid rgb(249 249 249 /75%);
   border-radius: 8px;
   width: 165px;
   height: 240px;
-  /* margin: 20px; */
-}
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.599);}
 
 .hidden {
   display: none;
@@ -89,7 +88,6 @@ h4 {
 
 /* PAD  */
 @media (min-width: 768px) {
-  
 }
 /* PC1 */
 
