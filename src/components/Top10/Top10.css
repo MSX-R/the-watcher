@@ -191,7 +191,8 @@
   }
 
   .description{
-    margin: 5px 0;
+    margin: 5px 10% 5px 0;
+    padding: 0;
   }
 
 .top10RankingTitle, .titleCategory, .top10Genres, .description{
