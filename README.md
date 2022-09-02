@@ -1,6 +1,7 @@
 # The Watcher 🔴 - Plateforme VOD
 
 Projet réalisé par [MSX-R](https://github.com/MSX-R "lien github profile").
+Lien du site déployé: [https://msx-r.github.io/the-watcher/home](hhttps://msx-r.github.io/the-watcher/homettp:// "https://msx-r.github.io/the-watcher/home")
 
 # En quoi consiste le projet ?
 
