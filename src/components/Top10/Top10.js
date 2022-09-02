@@ -52,11 +52,18 @@ const Top10 = ({
   //       break;
   //       default :
   //       pegi = 'Non-classé';
+
+// BUTTONS NAMING
+const [buttonPreviousNaming, setButtonPreviousNaming] = useState([])
+const [buttonNextNaming, setButtonNextNaming] = useState([])
+
   // BUTTONS
   const handleChangePreviousMovie = () => {
     if (indexMovie <= 0) {
       setIndexMovie(moviesList);
       console.log(" Renvoi sur le dernier élèment de la liste", indexMovie);
+      setButtonPreviousNaming(popularMovie[moviesList].title)
+      console.log("popular movies list title ", popularMovie[9].title)
     } else if (indexMovie <= moviesList) {
       setIndexMovie(indexMovie - 1);
       console.log(" Retour sur l'élèment précédent de la liste", indexMovie);

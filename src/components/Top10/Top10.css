@@ -63,11 +63,13 @@
 }
 
 .posterTop10 {
-  margin-right: 18px;
+  margin: 0 18px 10px 18px;
   border-radius: 8px;
   border: 2px solid hwb(0 3% 20% / 0.666);
-  width: 100px;
-  height: 150px;
+  min-width: 100px;
+  width: 27vw;
+  min-height: 150px;
+  height: 37vw;
   box-shadow: 1px 1px 2px black;
 }
 
@@ -137,36 +139,84 @@
   z-index: 1;
 }
 
-
-
 /* PAD  */
 @media (min-width: 768px) {
-  .titleCategory{
-    font-size: 50px ;
+  .titleCategory {
+    font-size: 50px;
   }
-.top10Ranking, .top10Title {
-  font-size: 35px;
-}
-.top10Genres{
-  font-size: 16px;
-}
-.top10MovieCategory, .description{
-  font-size: 14px;
-}
-.buttons > button {
-  width: 20%;
+  .top10Ranking,
+  .top10Title {
+    font-size: 35px;
+  }
+  .top10Genres {
+    font-size: 16px;
+  }
+  .top10MovieCategory,
+  .description {
+    font-size: 14px;
+  }
+  .buttons > button {
+    width: 20%;
+  }
 
-}
-
-.posterTop10{
-  height: 285px;
-  width: 200px;
-  border : 5px solid rgba(167, 165, 165, 0.948);
-}
-
+  .posterTop10 {
+    height: 285px;
+    width: 200px;
+    border: 5px solid rgba(167, 165, 165, 0.948);
+    margin-bottom: 40px;
+  }
 }
 /* PC1 */
 @media (min-width: 992px) {
+  .posterTop10 {
+    margin-right: 10%;
+    height: 385px;
+    width: 275px;
+    border: 7px solid silver;
+    box-shadow: 7px 10px 10px black;
+  }
+  .top10Container{
+    background: linear-gradient( to top, var(--Color1),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.3) ,rgba(0, 0, 0, 0) );
+  }
+
+  .titleCategory {
+    font-size: 50px;
+  }
+
+  .top10MovieCategory{
+    margin-left: 10vw;
+    width: fit-content;
+    padding-right: 10%;
+    margin: 5px 0px 5px 10vw;
+  }
+
+  .description{
+    margin: 5px 0;
+  }
+
+.top10RankingTitle, .titleCategory, .top10Genres, .description{
+  padding-left: 10vw;
+}
+.top10Ranking{
+  padding: 0 15px 0 0;
+}
+
+.top10Ranking,
+  .top10Title {
+    font-size: 40px;
+    margin: 5px 0;
+  }
+
+  .buttons {
+    margin: 10px 0;
+  }
+
+  .buttons > button {
+    width: 12%;
+  }
+
+
+
 }
 /* PC2 */
 
