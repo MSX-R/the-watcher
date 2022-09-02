@@ -2,7 +2,6 @@ import React from "react";
 import "./Row.css";
 
 const Row = ({ title, moviesList, urlImage, classic = "" }) => {
-
   return (
     <div className="row">
       <h2 className="title rowTitle"> {title}</h2>
@@ -16,10 +15,9 @@ const Row = ({ title, moviesList, urlImage, classic = "" }) => {
                   className="poster posterRow"
                 ></img>
                 <p className="rowMovieTitle">{movie.title || movie.name} </p>
-                
               </div>
             ))
-          : "nope"}
+          : ""}
       </div>
     </div>
   );

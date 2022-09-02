@@ -5,9 +5,9 @@ import Logo from "../../assets/logoBlanc.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
 import SearchBar from "../searchBar/searchBar";
-// import requests from "../Bonus/Requests";
 
 const Navbar = ({
+  apiKEY, // DEL if process
   searchTerm,
   setSearchTerm,
   searchResult,
@@ -25,7 +25,6 @@ const Navbar = ({
     setShowMenu(!showMenu);
   };
 
-  // Bg nav color scroll change
   const [navbarBG, setNavbarBG] = useState(false);
 
   const changeBackground = () => {
@@ -43,12 +42,12 @@ const Navbar = ({
 
   const changeType = () => {
     setDataType("tv");
-    console.log(" JE SUIS LE DATA TYPE", dataType);
   };
 
   return (
     <div className={navbarBG ? " navbar navbarBGdark" : "navbar"}>
       <SearchBar
+        apiKEY={apiKEY} // DEL if process
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         searchResult={searchResult}

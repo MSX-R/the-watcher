@@ -1,7 +1,6 @@
 import React from "react";
 import "./EntrancePage.css";
 import Logo from "../../assets/logoBlanc.png";
-import BackgroundEntrance from "../../assets/moviesWallpapers.jpg";
 import { useNavigate } from "react-router-dom";
 
 const EntrancePage = () => {
@@ -19,11 +18,6 @@ const EntrancePage = () => {
         className="backgroundRadialEffect fade-in"
         alt="radial effect on background"
       ></div>
-      {/* <img
-        src={BackgroundEntrance}
-        alt="Movies wallpapers"
-        className="backgroundEntrance fade-in"
-      /> */}
       <div alt="Movies wallpapers" className="backgroundEntrance fade-in"></div>
     </div>
   );

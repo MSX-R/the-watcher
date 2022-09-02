@@ -7,6 +7,7 @@ import "./App.css";
 import "./animationsCSS/animations.css";
 
 function App() {
+  const apiKEY = "c89646cb9c2f9f7a6144c074fff0e9c7" // DEL if process
   const urlImage = "https://image.tmdb.org/t/p/original";
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
@@ -44,7 +45,8 @@ const [dataType, setDataType] =useState(["movie"])
     const moviesPEGIcall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.REACT_APP_API_KEY}`
+          `https://api.themoviedb.org/3/certification/movie/list?api_key=${apiKEY}`
+          // `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.REACT_APP_API_KEY}` avec process.env
         )
         .then((response) => response.data)
         .then((data) => setMoviesPEGI(data.certifications.FR)
@@ -61,7 +63,7 @@ const [dataType, setDataType] =useState(["movie"])
     const genresFilmsCALL = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKEY}&language=fr-FR`
         )
         .then((response) => response.data)
         .then((data) => setGenresFilms(data.genres))
@@ -72,15 +74,13 @@ const [dataType, setDataType] =useState(["movie"])
     genresFilmsCALL();
   }, []);
 
-  // genresFilms &&
-  //   console.log("Affichage de la liste des Genres de film", genresFilms);
 
   // MOVIE GENRE : ACTION
   useEffect(() => {
     const actionCALL = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=28&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=28&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setActionMovie(data.results))
@@ -97,7 +97,7 @@ const [dataType, setDataType] =useState(["movie"])
     const aventureCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=12&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=12&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setAventureMovie(data.results))
@@ -113,7 +113,7 @@ const [dataType, setDataType] =useState(["movie"])
     const animationCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=16&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=16&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setAnimationMovie(data.results))
@@ -129,7 +129,7 @@ const [dataType, setDataType] =useState(["movie"])
     const comedieCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=35&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=35&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setComedieMovie(data.results))
@@ -145,7 +145,7 @@ const [dataType, setDataType] =useState(["movie"])
     const crimeCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=80&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=80&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setCrimemovie(data.results))
@@ -161,7 +161,7 @@ const [dataType, setDataType] =useState(["movie"])
     const documentaireCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=99&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=99&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setDocumentairemovie(data.results))
@@ -177,7 +177,7 @@ const [dataType, setDataType] =useState(["movie"])
     const drameCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=18&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=18&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setDrameMovie(data.results))
@@ -193,7 +193,7 @@ const [dataType, setDataType] =useState(["movie"])
     const familialCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10751&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=10751&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setFamilialMovie(data.results))
@@ -209,7 +209,7 @@ const [dataType, setDataType] =useState(["movie"])
     const fantastiqueCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=14&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=14&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setFantastiqueMovie(data.results))
@@ -225,7 +225,7 @@ const [dataType, setDataType] =useState(["movie"])
     const histoireCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=36&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=36&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setHistoireMovie(data.results))
@@ -241,7 +241,7 @@ const [dataType, setDataType] =useState(["movie"])
     const horreurCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=27&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=27&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setHorreurMovie(data.results))
@@ -257,7 +257,7 @@ const [dataType, setDataType] =useState(["movie"])
     const musiqueCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10402&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=10402&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setMusiqueMovie(data.results))
@@ -273,7 +273,7 @@ const [dataType, setDataType] =useState(["movie"])
     const mystereCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=9648&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=9648&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setMystereMovie(data.results))
@@ -289,7 +289,7 @@ const [dataType, setDataType] =useState(["movie"])
     const romanceCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10749&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=10749&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setRomanceMovie(data.results))
@@ -305,7 +305,7 @@ const [dataType, setDataType] =useState(["movie"])
     const sciencefictionCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=878&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=878&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setSciencefictionMovie(data.results))
@@ -321,7 +321,7 @@ const [dataType, setDataType] =useState(["movie"])
     const telefilmCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10770&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=10770&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setTelefilmMovie(data.results))
@@ -337,7 +337,7 @@ const [dataType, setDataType] =useState(["movie"])
     const thrillerCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=53&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=53&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setThrillerMovie(data.results))
@@ -353,7 +353,7 @@ const [dataType, setDataType] =useState(["movie"])
     const guerreCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=10752&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=10752&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setGuerreMovie(data.results))
@@ -369,7 +369,7 @@ const [dataType, setDataType] =useState(["movie"])
     const westernCall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=37&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${apiKEY}&with_genres=37&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setWesternMovie(data.results))
@@ -388,6 +388,7 @@ const [dataType, setDataType] =useState(["movie"])
           path="/home"
           element={
             <Home
+            apiKEY={apiKEY} // DEL if process
               urlImage={urlImage}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}

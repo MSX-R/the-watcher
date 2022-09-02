@@ -22,7 +22,7 @@ La plateforme The Watcher permet à tous visiteurs (ou futurs membres) d'accéde
 
 - Faites défiler les élements de la section "Les 30 autres films populaires" en scrollant vers la gauche
 
-###### Visualiser une carte de présentation
+###### Visualiser une carte de présentation [en cours de production..]
 
 - Cliquer sur le poster d'un élèment
 
@@ -42,6 +42,5 @@ Le logo et ses variantes ont intégralement été créé par MSX-R.
 </a>
 
 # Obtention des données (API)
-
 
 The Movie DataBase : https://www.themoviedb.org/

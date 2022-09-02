@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import Card from "../../components/Card/Card";
 import "./Home.css";
 import axios from "axios";
 import Top10 from "../../components/Top10/Top10";
@@ -7,8 +6,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import Row from "../../components/Row/Row";
 import RowTop40 from "../../components/RowTop40/RowTop40";
 
-
 const Home = ({
+  apiKEY, // DEL if process
   urlImage,
   searchTerm,
   setSearchTerm,
@@ -16,9 +15,7 @@ const Home = ({
   setSearchResult,
   movieDetails,
   setMovieDetails,
-  // GENRES DES FILMS GENERALES
   genresFilms,
-  // PEGI CERTIF
   moviesPEGI,
   setMoviesPEGI,
   // GENRES THEMES DE FILMS EN PROPS
@@ -47,25 +44,6 @@ const Home = ({
 }) => {
   const [popularMovie, setPopularMovie] = useState([]);
   const [popularTop2040, setPopularTop2040] = useState([]);
-  // const [actionMovie, setActionMovie] = useState([]);
-  // const [aventureMovie, setAventureMovie] = useState([]);
-  // const [animationMovie, setAnimationMovie] = useState([]);
-  // const [comedieMovie, setComedieMovie] = useState([]);
-  // const [crimeMovie, setCrimemovie] = useState([]);
-  // const [documentaireMovie, setDocumentairemovie] = useState([]);
-  // const [drameMovie, setDrameMovie] = useState([]);
-  // const [familialMovie, setFamilialMovie] = useState([]);
-  // const [fantastiqueMovie, setFantastiqueMovie] = useState([]);
-  // const [histoireMovie, setHistoireMovie] = useState([]);
-  // const [horreurMovie, setHorreurMovie] = useState([]);
-  // const [musiqueMovie, setMusiqueMovie] = useState([]);
-  // const [mystereMovie, setMystereMovie] = useState([]);
-  // const [romanceMovie, setRomanceMovie] = useState([]);
-  // const [sciencefictionMovie, setSciencefictionMovie] = useState([]);
-  // const [telefilmMovie, setTelefilmMovie] = useState([]);
-  // const [thrillerMovie, setThrillerMovie] = useState([]);
-  // const [guerreMovie, setGuerreMovie] = useState([]);
-  // const [westernMovie, setWesternMovie] = useState([]);
 
   const initialNumber = 0;
   const [indexMovie, setIndexMovie] = useState(initialNumber);
@@ -77,7 +55,7 @@ const Home = ({
     const popularCall1 = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=1`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKEY}&language=fr-FR&page=1`
         )
         .then((response) => response.data)
         .then((data) => setPopularMovie(data.results))
@@ -93,7 +71,7 @@ const Home = ({
     const popularCall2 = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=2`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKEY}&language=fr-FR&page=2`
         )
         .then((response) => response.data)
         .then(
@@ -112,25 +90,22 @@ const Home = ({
   // MOVIE GENRE : POPULAR  Top 11-40
   const selectionTop40 = popularMovie && popularTop2040.slice(10, 40);
 
-  // console.log(
-  //   `JE SUIS LE FILm choisi par TOP10 n°0 = ${selectionTop10[0].title} ==> `,
-  //   selectionTop10[0].release_dates
-  // );
   return (
     <div>
       <Navbar
+        apiKEY={apiKEY} // DEL if process
         urlImage={urlImage}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         searchResult={searchResult}
         setSearchResult={setSearchResult}
         movieDetails={movieDetails}
-        // PROPS DATA TYPE CHANGER
         dataType={dataType}
         setDataType={setDataType}
       />
-      {selectionTop10.length ? (
-        // FILMS POPULAIRES TOP10
+
+      {/* FILMS POPULAIRES TOP10 */}
+      {selectionTop10.length && (
         <div className="top10Component">
           <Top10
             moviesList={selectionTop10.length - 1}
@@ -145,8 +120,6 @@ const Home = ({
             setMoviesPEGI={setMoviesPEGI}
           />{" "}
         </div>
-      ) : (
-        "Error"
       )}
       {/* AFFICHAGE ELEMENTS RECHERCHES SI SAISIE */}
       {searchTerm.length ? (
@@ -160,164 +133,124 @@ const Home = ({
         ""
       )}
       {/* FILMS POPULAIRE 11-40 */}
-      {selectionTop40 ? (
+      {selectionTop40 && (
         <RowTop40
           title="FILMS POPULAIRES TOP 11 - 40"
           moviesList={selectionTop40}
           genresFilms={genresFilms}
           urlImage={urlImage}
         />
-      ) : (
-        ""
       )}
 
       {/* FILM ACTION */}
-      {actionMovie ? (
+      {actionMovie && (
         <Row title="Action" moviesList={actionMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS AVENTURE */}
-      {aventureMovie ? (
+      {aventureMovie && (
         <Row title="AVENTURE" moviesList={aventureMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS ANIMATION */}
-      {animationMovie ? (
+      {animationMovie && (
         <Row
           title="animation"
           moviesList={animationMovie}
           urlImage={urlImage}
         />
-      ) : (
-        ""
       )}
 
       {/* FILMS COMEDIE */}
-      {comedieMovie ? (
+      {comedieMovie && (
         <Row title="comedie" moviesList={comedieMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS CRIME */}
-      {crimeMovie ? (
+      {crimeMovie && (
         <Row title="crime" moviesList={crimeMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS DOCUMENTAIRE */}
-      {documentaireMovie ? (
+      {documentaireMovie && (
         <Row
           title="documentaire"
           moviesList={documentaireMovie}
           urlImage={urlImage}
         />
-      ) : (
-        ""
       )}
 
       {/* FILMS DRAME */}
-      {drameMovie ? (
+      {drameMovie && (
         <Row title="drame" moviesList={drameMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS FAMILLE */}
-      {familialMovie ? (
+      {familialMovie && (
         <Row title="familial" moviesList={familialMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS FANTASTIQUE */}
-      {fantastiqueMovie ? (
+      {fantastiqueMovie && (
         <Row
           title="fantastique"
           moviesList={fantastiqueMovie}
           urlImage={urlImage}
         />
-      ) : (
-        ""
       )}
 
       {/* FILMS Histoire */}
-      {histoireMovie ? (
+      {histoireMovie && (
         <Row title="histoire" moviesList={histoireMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS HORREUR */}
-      {horreurMovie ? (
+      {horreurMovie && (
         <Row title="horreur" moviesList={horreurMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS MUSIQUE */}
-      {musiqueMovie ? (
+      {musiqueMovie && (
         <Row title="musique" moviesList={musiqueMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS MYSTERE */}
-      {mystereMovie ? (
+      {mystereMovie && (
         <Row title="mystere" moviesList={mystereMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS ROMANCE */}
-      {romanceMovie ? (
+      {romanceMovie && (
         <Row title="ROMANCE" moviesList={romanceMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS SCIENCE FICTION */}
-      {sciencefictionMovie ? (
+      {sciencefictionMovie && (
         <Row
           title="sciencefiction"
           moviesList={sciencefictionMovie}
           urlImage={urlImage}
         />
-      ) : (
-        ""
       )}
 
       {/* FILMS TELEFILM */}
-      {telefilmMovie ? (
+      {telefilmMovie && (
         <Row title="telefilm" moviesList={telefilmMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS THRILLER*/}
-      {thrillerMovie ? (
+      {thrillerMovie && (
         <Row title="thriller" moviesList={thrillerMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS GUERRE*/}
-      {guerreMovie ? (
+      {guerreMovie && (
         <Row title="guerre" moviesList={guerreMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
 
       {/* FILMS WESTERN*/}
-      {westernMovie ? (
+      {westernMovie && (
         <Row title="western" moviesList={westernMovie} urlImage={urlImage} />
-      ) : (
-        ""
       )}
     </div>
   );

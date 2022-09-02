@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Top10.css";
 
 const Top10 = ({
+  apiKEY, // DEL if process
   urlImage,
   moviesList,
   popularMovie,
@@ -22,51 +23,28 @@ const Top10 = ({
     const moviesPEGICall = async () => {
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/${popularMovie.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`
+          `https://api.themoviedb.org/3/movie/${popularMovie.id}?api_key=${apiKEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`
         )
         .then((res) => res.data)
         .then((data) => setMoviePEGIUnique(data))
         .catch((err) => {
-          console.log(err);
+          console.log("Erreur détéctée", err);
         });
     };
     moviesPEGICall();
   }, [popularMovie.id]);
 
-  // PEGI Conversion FR
-  // switch(pegi) {
-  //   case 'G' :
-  //     pegi = ' Tous publics';
-  //     break;
-  //     case 'PG' :
-  //       pegi = ' Interdit aux -10 ans';
-  //       break;
-  //       case 'PG-13' :
-  //       pegi = ' Interdit aux -13 ans';
-  //       break;
-  //       case 'R' :
-  //      pegi = ' Autorisation Parentale recquise aux -17 ans';
-  //       break;
-  //       case 'NC-17' :
-  //       pegi = ' Interdit aux -17ans';
-  //       break;
-  //       default :
-  //       pegi = 'Non-classé';
-
-// BUTTONS NAMING
-const [buttonPreviousNaming, setButtonPreviousNaming] = useState([])
-const [buttonNextNaming, setButtonNextNaming] = useState([])
+  // BUTTONS NAMING - en cours..
+  const [buttonPreviousNaming, setButtonPreviousNaming] = useState([]);
+  const [buttonNextNaming, setButtonNextNaming] = useState([]);
 
   // BUTTONS
   const handleChangePreviousMovie = () => {
     if (indexMovie <= 0) {
       setIndexMovie(moviesList);
-      console.log(" Renvoi sur le dernier élèment de la liste", indexMovie);
-      setButtonPreviousNaming(popularMovie[moviesList].title)
-      console.log("popular movies list title ", popularMovie[9].title)
+      setButtonPreviousNaming(popularMovie[moviesList].title);
     } else if (indexMovie <= moviesList) {
       setIndexMovie(indexMovie - 1);
-      console.log(" Retour sur l'élèment précédent de la liste", indexMovie);
     }
     setTruncateValue(120);
   };
@@ -74,10 +52,8 @@ const [buttonNextNaming, setButtonNextNaming] = useState([])
   const handleChangeNextMovie = () => {
     if (indexMovie >= moviesList) {
       setIndexMovie(0);
-      console.log(" Retour sur le premier élèment de la liste  ", indexMovie);
     } else if (indexMovie >= 0) {
       setIndexMovie(indexMovie + 1);
-      console.log(" Avance sur le prochain élèment de la liste ", indexMovie);
     }
     setTruncateValue(120);
   };
@@ -112,7 +88,6 @@ const [buttonNextNaming, setButtonNextNaming] = useState([])
                   {popularMovie.title ? popularMovie.title : popularMovie.name}
                 </h2>
               </div>
-              {/* <img src={{}} alt="Fond d'ecran" /> */}
               <p className=" top10Genres">
                 {popularMovie.genre_ids
                   ? popularMovie.genre_ids
@@ -142,13 +117,12 @@ const [buttonNextNaming, setButtonNextNaming] = useState([])
             ></img>
           </div>
 
-          {/* <p className="descriptionSliderTop">{truncateValue(popularMovie.overview)} </p> */}
           <p className="description">
             {popularMovie.overview.length <= truncateValue
               ? popularMovie.overview
               : popularMovie.overview.slice(0, truncateValue)}{" "}
             <span className="showTheText" onClick={showTruncateText}>
-              {truncateValue > 121 ? "...voir moins" : "...voir plus"}.
+              {truncateValue > 121 ? "... voir moins" : "... voir plus"}.
             </span>
           </p>
 

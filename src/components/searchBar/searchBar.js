@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-// import requests from "../Bonus/Requests";
-// import axios from "../Bonus/axios";
 import "./searchBar.css";
 import { MdSavedSearch } from "react-icons/md";
 import { CgCloseR } from "react-icons/cg";
 import axios from "axios";
 
 const SearchBar = ({
+  apiKEY={apiKEY}, // DEL if process
   searchTerm,
   setSearchTerm,
   searchResult,
@@ -24,7 +23,7 @@ const SearchBar = ({
     setSearchTerm("");
   };
 
-  const fetchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR&page=1&include_adult=true&query=${searchTerm}`;
+  const fetchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKEY}&language=fr-FR&page=1&include_adult=true&query=${searchTerm}`;
 
   useEffect(() => {
     if (searchTerm.length > 0) {
@@ -43,7 +42,7 @@ const SearchBar = ({
 
   useEffect(() => {
     if (movieId.length > 0) {
-      const fetchUrl = `https://api.themoviedb.org/3/${dataType}/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
+      const fetchUrl = `https://api.themoviedb.org/3/${dataType}/${movieId}?api_key=${apiKEY}&append_to_response=videos,images,credits,release_dates&language=fr-FR`;
       
       async function fetchData() {
         const request = await axios.get(fetchUrl);
