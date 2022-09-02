@@ -38,10 +38,17 @@ La plateforme The Watcher permet à tous visiteurs (ou futurs membres) d'accéde
 
 Le logo et ses variantes ont intégralement été créé par MSX-R.
 
----
 
 <a href="https://msx-r.github.io/portfolio/" ><img src="https://i.goopics.net/p00cik.png" alt="Image" style="width:100px"><img src="https://i.goopics.net/klmla6.png" alt="Image" style="width:100px"><img src="https://i.goopics.net/ircbgx.png" alt="Image" style="width:100px"><img src="https://i.goopics.net/g3uund.png" alt="Image" style="width:100px">
 </a>
+
+
+# Galerie
+
+<a href="https://msx-r.github.io/the-watcher/" ><img src="https://i.goopics.net/21wmrm.png" alt="Image" style="width:200px"> <img src="https://i.goopics.net/45on35.png" alt="Image" style="width:200px"> <img src="https://i.goopics.net/imff8j.png" alt="Image" style="width:205px">  
+</a>
+
+<img src="https://i.goopics.net/y4yv2e.png" alt="Image" style="width:100px">
 
 # Obtention des données (API)
 
